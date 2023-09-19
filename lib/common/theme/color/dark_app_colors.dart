@@ -14,7 +14,7 @@ class DarkAppColors extends AbstractThemeColors {
   Color get badgeBg => AppColors.darkOrange;
 
   @override
-  Color get divider => const Color.fromARGB(255, 93, 93, 93);
+  Color get divider => const Color.fromARGB(255, 80, 80, 80);
 
   @override
   Color get drawerBg => const Color.fromARGB(255, 42, 42, 42);
@@ -26,7 +26,7 @@ class DarkAppColors extends AbstractThemeColors {
   Color get iconButton => const Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get iconButtonInactivate => const Color.fromARGB(255, 131, 131, 131);
+  Color get iconButtonInactivate => const Color.fromARGB(255, 110, 110, 110);
 
   @override
   Color get inActivate => const Color.fromARGB(255, 65, 68, 74);

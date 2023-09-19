@@ -115,6 +115,8 @@ flutter:
     - assets/translations/
     - assets/image/bank/
     - assets/image/notification/
+    - assets/image/benefit/
+    - assets/image/icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

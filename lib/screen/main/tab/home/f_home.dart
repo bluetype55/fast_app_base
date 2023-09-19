@@ -20,7 +20,7 @@ class HomeFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: context.themeType.themeData.scaffoldBackgroundColor,
       child: Stack(
         children: [
           RefreshIndicator(
@@ -46,7 +46,7 @@ class HomeFragment extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        '자산'.text.bold.white.make(),
+                        '자산'.text.bold.make(),
                         height5,
                         ...bankAccounts
                             .map((e) => BankAccountWidget(e))

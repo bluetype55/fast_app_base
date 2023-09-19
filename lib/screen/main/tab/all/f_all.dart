@@ -1,3 +1,4 @@
+import 'package:fast_app_base/common/common.dart';
 import 'package:flutter/material.dart';
 
 class AllFragment extends StatefulWidget {
@@ -10,6 +11,8 @@ class AllFragment extends StatefulWidget {
 class _AllFragmentState extends State<AllFragment> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: context.themeType.themeData.scaffoldBackgroundColor,
+    );
   }
 }
