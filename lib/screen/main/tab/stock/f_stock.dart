@@ -1,5 +1,6 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_image_button.dart';
+import 'package:fast_app_base/screen/main/tab/stock/search/s_search_stock.dart';
 import 'package:fast_app_base/screen/main/tab/stock/tab/f_my_stock.dart';
 import 'package:fast_app_base/screen/main/tab/stock/tab/f_today_discovery.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +25,16 @@ class _StockFragmentState extends State<StockFragment>
         slivers: [
           SliverAppBar(
             pinned: true,
-            backgroundColor: context.appColors.roundedLayoutBackgorund,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Container(
+                color: context.themeType.themeData.scaffoldBackgroundColor,
+              ),
+            ),
             actions: [
               ImageButton(
                   imagePath: '$basePath/icon/stock_search.png',
                   onTap: () {
-                    context.showSnackbar('검색');
+                    Nav.push(SearchStockScreen());
                   }),
               ImageButton(
                   imagePath: '$basePath/icon/stock_calendar.png',
@@ -49,9 +54,9 @@ class _StockFragmentState extends State<StockFragment>
                 title,
                 tabBar,
                 if (currentIndex == 0)
-                  MyStockFragment()
+                  const MyStockFragment()
                 else
-                  TodayDiscoveryFragment()
+                  const TodayDiscoveryFragment()
               ],
             ),
           ),
@@ -61,7 +66,6 @@ class _StockFragmentState extends State<StockFragment>
   }
 
   Widget get title => Container(
-        color: context.appColors.roundedLayoutBackgorund,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -87,7 +91,6 @@ class _StockFragmentState extends State<StockFragment>
       );
 
   Widget get tabBar => Container(
-        color: context.appColors.roundedLayoutBackgorund,
         child: Column(
           children: [
             TabBar(
@@ -96,9 +99,11 @@ class _StockFragmentState extends State<StockFragment>
                   currentIndex = index;
                 });
               },
-              labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              labelPadding: EdgeInsets.symmetric(vertical: 20),
-              indicatorPadding: EdgeInsets.symmetric(horizontal: 20),
+              labelColor: context.appColors.text,
+              labelStyle:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              labelPadding: const EdgeInsets.symmetric(vertical: 20),
+              indicatorPadding: const EdgeInsets.symmetric(horizontal: 20),
               indicatorSize: TabBarIndicatorSize.tab,
               indicatorColor: Colors.white,
               controller: tabController,
@@ -107,7 +112,7 @@ class _StockFragmentState extends State<StockFragment>
                 '오늘의 발견'.text.make(),
               ],
             ),
-            Line(),
+            const Line(),
           ],
         ),
       );
