@@ -25,6 +25,7 @@ class _OpensourceScreenState extends State<OpensourceScreen> {
 
   void initData() async {
     final list = await LocalJson.getObjectList<Package>("json/licenses.json");
+    print(list);
     setState(() {
       packageList = list;
     });
@@ -40,7 +41,7 @@ class _OpensourceScreenState extends State<OpensourceScreen> {
         itemBuilder: (context, index) => OpensourceItem(packageList[index]),
         itemCount: packageList.length,
         separatorBuilder: (BuildContext context, int index) {
-          return const Line().pSymmetric(h:20);
+          return const Line().pSymmetric(h: 20);
         },
       ),
     );

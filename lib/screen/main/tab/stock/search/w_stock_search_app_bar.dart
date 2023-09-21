@@ -30,7 +30,6 @@ class StockSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
               texthint: "'커피'를 검색해보세요.",
               textInputAction: TextInputAction.search,
               onEditingComplete: () {
-                debugPrint('검색');
                 AppKeyboardUtil.hide(context);
               },
             ).pOnly(top: 6)),
